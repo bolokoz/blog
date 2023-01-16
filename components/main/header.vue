@@ -7,10 +7,16 @@ let isDark = ref(false)
     <div class="flex px-6 container max-w-5xl justify-between mx-auto items-baseline">
       <ul class="flex items-baseline space-x-5">
         <li class="">
-          <NuxtLink to="/" class="text-2xl text-black font-bold"> Home </NuxtLink>
+          <NuxtLink to="/" class="text-2xl text-black font-bold"> Boloko | mind </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/categories"> Categories </NuxtLink>
+          <NuxtLink to="/projects"> Projects </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/categories"> Areas </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/categories"> Posts </NuxtLink>
         </li>
       </ul>
       <ul class="flex items-center space-x-3">
@@ -19,7 +25,7 @@ let isDark = ref(false)
         </li>
         <li title="About Me">
           <NuxtLink to="https://www.nurriyad.xyz/" aria-label="About me">
-            <Icon size="1.2em" class="cursor-pointer" name="emojione:boy-dark-skin-tone" />
+            <Icon size="1.2em" class="cursor-pointer" name="About" />
           </NuxtLink>
         </li>
       </ul>
