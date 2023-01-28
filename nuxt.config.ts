@@ -4,9 +4,9 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-16',
       viewport: 'width=device-width,initial-scale=1',
-      title: "Boloko`s Mind",
+      title: 'Boloko`s Mind',
       titleTemplate: "%s - Boloko's mind",
-      meta: [{ name: 'description', content: "Boloko" }],
+      meta: [{ name: 'description', content: 'Boloko' }],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
   },
@@ -20,8 +20,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
     '@nuxt/image-edge',
-    '@nuxtjs/robots',
-    '@nuxtjs/fontaine',
+    // '@nuxtjs/robots',
+    // '@nuxtjs/fontaine',
   ],
 
   content: {

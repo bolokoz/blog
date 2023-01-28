@@ -62,7 +62,7 @@ useHead({
 <template>
   <div>
     <NuxtLayout>
-      <NuxtLoadingIndicator />
+      <!-- <NuxtLoadingIndicator /> -->
       <NuxtPage />
     </NuxtLayout>
   </div>

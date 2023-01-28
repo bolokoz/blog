@@ -13,7 +13,7 @@ let isDark = ref(false)
           <NuxtLink to="/projects"> Projects </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/categories"> Areas </NuxtLink>
+          <NuxtLink to="/areas"> Areas </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/categories"> Posts </NuxtLink>
