@@ -13,10 +13,10 @@ let isDark = ref(false)
           <NuxtLink to="/projects"> Projects </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/areas"> Areas </NuxtLink>
+          <NuxtLink to="/categories"> Areas </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/blog"> Posts </NuxtLink>
+          <NuxtLink to="/categories"> Posts </NuxtLink>
         </li>
       </ul>
       <ul class="flex items-center space-x-3">

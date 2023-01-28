@@ -1,0 +1,129 @@
+{
+  "main": {
+    "id": "959ad6d921b89b2d",
+    "type": "split",
+    "children": [
+      {
+        "id": "f4c4e8079b8f732f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d00c1a6f1ab4493a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/projects/1. hello-world.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e6e7566b5024cda2",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "8c9e4029a7ae3f3e",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "1820771aac40e57d",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "6026ac6248cbf0f6",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "6596c35baeca9c38",
+        "type": "leaf",
+        "state": {
+          "type": "starred",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "f2099b52aa9e49f6",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "c3a0a7ae654d2b51",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "content/projects/1. hello-world.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "e6f0976fd5cf4452",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "content/projects/1. hello-world.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "80a6a163d24287d3",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "content/projects/1. hello-world.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "active": "8c9e4029a7ae3f3e",
+  "lastOpenFiles": [
+    "content/projects/1. hello-world.md",
+    "content/blogs/5. intro-to-ts.md"
+  ]
+}
