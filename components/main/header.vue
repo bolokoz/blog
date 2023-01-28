@@ -21,7 +21,7 @@ let isDark = ref(false)
       </ul>
       <ul class="flex items-center space-x-3">
         <li>
-          <NuxtLink to="/blogs"> Archive </NuxtLink>
+          <NuxtLink to="/blog"> Archive </NuxtLink>
         </li>
         <li title="About Me">
           <NuxtLink to="https://www.nurriyad.xyz/" aria-label="About me">
