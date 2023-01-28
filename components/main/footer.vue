@@ -47,7 +47,7 @@
           <p class="text-black text-base font-semibold">Quick Link</p>
           <NuxtLink to="/" class="hover:underline">Home</NuxtLink>
           <NuxtLink to="/categories" class="hover:underline">Categories</NuxtLink>
-          <NuxtLink to="/blogs" class="hover:underline">Archive</NuxtLink>
+          <NuxtLink to="/blog" class="hover:underline">Archive</NuxtLink>
           <NuxtLink to="https://www.nurriyad.xyz/" target="_blank" class="hover:underline">
             About Me
           </NuxtLink>

@@ -1,21 +1,5 @@
 <script lang="ts" setup>
-const route = useRoute()
-
-// take category from route params & make first char upper
-const category = computed(() => {
-  let name = route.params.category || ''
-  let strName = ''
-
-  if (name instanceof Array) strName = name.at(0) || ''
-  else strName = name
-  return strName
-})
-
-const { data } = await useAsyncData('home', () =>
-  queryContent('/blog')
-    .where({ tags: { $contains: category.value } })
-    .find()
-)
+const { data } = await useAsyncData('home', () => queryContent('/areas/linguagens').sort({ _id: -1 }).find())
 
 const formatedData = computed(() => {
   return data.value?.map((articles) => {
@@ -35,11 +19,11 @@ const formatedData = computed(() => {
 })
 
 useHead({
-  title: category.value,
+  title: 'Archive',
   meta: [
     {
       name: 'description',
-      content: `You will find all the ${category.value} related post here`,
+      content: 'Here you will find all the blog posts I have written & published on this site.',
     },
   ],
   titleTemplate: "Riyad's Blog - %s",
@@ -47,10 +31,10 @@ useHead({
 </script>
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
-    <CategoryTopic />
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <ArchiveHero />
+    <div class="space-y-5 my-5">
       <template v-for="post in formatedData" :key="post.title">
-        <BlogCard
+        <ArchiveCard
           :path="post.path"
           :title="post.title"
           :date="post.date"
@@ -62,9 +46,6 @@ useHead({
           :tags="post.tags"
           :published="post.published"
         />
-      </template>
-      <template v-if="data?.length === 0">
-        <BlogEmpty />
       </template>
     </div>
   </main>
