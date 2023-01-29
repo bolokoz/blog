@@ -71,6 +71,7 @@ useHead({
     },
   ],
 })
+
 </script>
 
 <template>
@@ -113,4 +114,5 @@ useHead({
       </ContentRenderer>
     </div>
   </main>
+
 </template>
