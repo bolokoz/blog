@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c15be2798dec3464",
+        "id": "4d17094a2d9942d2",
         "type": "tabs",
         "children": [
           {
-            "id": "49ed738b0ac5d439",
+            "id": "ce38323fd57bb572",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/projects/1. Alphaville 4.md",
+                "file": "content/resources/foodrating/202201290306.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/projects/1. Alphaville 4.md",
+                "file": "content/resources/foodrating/202201290306.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/projects/1. Alphaville 4.md",
+                "file": "content/resources/foodrating/202201290306.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/projects/1. Alphaville 4.md"
+                "file": "content/resources/foodrating/202201290306.md"
               }
             }
           }
@@ -147,17 +147,17 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "e902493b3f92f94b",
+  "active": "ce38323fd57bb572",
   "lastOpenFiles": [
-    "Untitled.canvas",
+    "content/resources/foodrating/Untitled.md",
+    "content/resources/foodrating/202201290306.md",
+    "content/resources/parmegianologo/2022-01-26.md",
+    "content/archive/templates/2022-01-FOODRATE.md",
     "content/projects/1. Alphaville 4.md",
+    "Untitled.canvas",
     "assets/images/preview3.png",
     "assets/images/preview1.png",
     "assets/images/logo.png",
-    "content/areas/linguagens/top500.md",
-    "conflict-files-obsidian-git.md",
-    "content/blogs/2023-01-16.md",
-    "content/blogs/Untitled.md",
-    "content/blogs/5. intro-to-ts.md"
+    "content/areas/linguagens/top500.md"
   ]
 }
