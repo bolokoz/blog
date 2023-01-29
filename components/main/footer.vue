@@ -16,22 +16,22 @@
             >
               <Icon name="fa:github" size="1em" />
             </NuxtLink>
-            <NuxtLink
+            <!-- <NuxtLink
               to="https://www.linkedin.com/in/nur-riyad/"
               target="_blank"
               class="p-2 bg-gray-300 rounded-md"
               aria-label="LinkedIn"
             >
               <Icon name="fa:linkedin-square" size="1em" />
-            </NuxtLink>
-            <NuxtLink
+            </NuxtLink> -->
+            <!-- <NuxtLink
               to="https://twitter.com/qdnvubp"
               target="_blank"
               class="p-2 bg-gray-300 rounded-md"
               aria-label="Twitter"
             >
               <Icon name="fa:twitter-square" size="1em" />
-            </NuxtLink>
+            </NuxtLink> -->
             <NuxtLink
               to="https://stackoverflow.com/users/16781395/nur-riyad"
               target="_blank"
