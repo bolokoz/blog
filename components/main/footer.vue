@@ -3,14 +3,13 @@
     <div class="px-6 container max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3">
         <div>
-          <p class="text-black text-2xl py-1 font-semibold">Al Asad Nur Riyad</p>
+          <p class="text-black text-2xl py-1 font-semibold">Hello from Boloko</p>
           <p class="py-2">
-            Hi! I am Riyad, a Tech enthusiast, problem solver and software engineer. Currently
-            working at Appscode Inc.
+            Bem vindo. Site em constante arrumamento. Nunca sei quando escrever as paradinha em ingles ou portugues. Antes feito que perfeito.
           </p>
           <div class="my-3 space-x-3 pb-3">
             <NuxtLink
-              to="https://github.com/nurRiyad"
+              to="https://github.com/bolokoz"
               target="_blank"
               class="p-2 bg-gray-300 rounded-md"
               aria-label="Github"

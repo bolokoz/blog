@@ -1,14 +1,26 @@
 <script lang="ts" setup>
-// Get Last 6 Publish Post from the content/blog directory
+const route = useRoute()
+
+// take category from route params & make first char upper
+const category = computed(() => {
+  let name = route.params.category || ''
+  let strName = ''
+
+  if (name instanceof Array) strName = name.at(0) || ''
+  else strName = name
+  return strName
+})
+
 const { data } = await useAsyncData('home', () =>
-  queryContent('/').limit(6).sort({ _id: -1 }).find()
+  queryContent('/blogs')
+    .where({ tags: { $contains: category.value } })
+    .find()
 )
 
 const formatedData = computed(() => {
   return data.value?.map((articles) => {
     return {
       path: articles._path,
-      dir: articles._dir,
       title: articles.title || 'no-title available',
       description: articles.description || 'no-descriptoin available',
       image: articles.image || '/nuxt-blog/no-image_cyyits.png',
@@ -23,25 +35,23 @@ const formatedData = computed(() => {
 })
 
 useHead({
-  title: 'Home',
+  title: category.value,
   meta: [
     {
       name: 'description',
-      content:
-        'Engineering, Web Developmen and never knowing if I should write in english or not',
+      content: `You will find all the ${category.value} related post here`,
     },
   ],
-  titleTemplate: "Boloko's Mind - %s",
+  titleTemplate: "Riyad's Blog - %s",
 })
 </script>
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
-    <MainHero title="Ultimas atualizações" subtitle="Todos os assuntos" />
+    <CategoryTopic />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <template v-for="post in formatedData" :key="post.title">
-        <MainCard
+        <BlogCard
           :path="post.path"
-          :dir="post.dir"
           :title="post.title"
           :date="post.date"
           :description="post.description"
