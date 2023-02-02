@@ -11,9 +11,7 @@ const resource = computed(() => {
   return strName
 })
 
-const { data } = await useAsyncData('resoures', () =>
-  queryContent(route.path).find()
-)
+const { data } = await useAsyncData('resources', () => queryContent(route.path).find())
 
 const articles = await queryContent(route.path).find()
 
@@ -48,7 +46,6 @@ useHead({
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <ResourceTopic />
-  {{ resource }}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <template v-for="post in formatedData" :key="post.title">
         <BlogCard

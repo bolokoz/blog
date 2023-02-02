@@ -41,11 +41,10 @@ useHead({
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <MainHero title="Areas" subtitle="Areas de interesse geral" />
     <div class="flex flex-wrap px-6 mt-12 gap-3">
-      <template v-for="topic in areas?.map(d=>d._dir)" :key="topic">
-        <CategoryCard :title="makeFirstCharUpper(topic)" />
+      <template v-for="topic in areas?.map((d) => d._dir)" :key="topic">
+        <AreaCard :title="makeFirstCharUpper(topic)" />
       </template>
     </div>
-
 
     <div class="space-y-5 my-5">
       <template v-for="post in areas" :key="post.title">
@@ -63,6 +62,5 @@ useHead({
         />
       </template>
     </div>
-
   </main>
 </template>

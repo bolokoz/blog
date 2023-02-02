@@ -5,7 +5,8 @@
         <div>
           <p class="text-black text-2xl py-1 font-semibold">Hello from Boloko</p>
           <p class="py-2">
-            Bem vindo. Site em constante arrumamento. Nunca sei quando escrever as paradinha em ingles ou portugues. Antes feito que perfeito.
+            Bem vindo. Site em constante arrumamento. Nunca sei quando escrever as paradinha em
+            ingles ou portugues. Antes feito que perfeito.
           </p>
           <div class="my-3 space-x-3 pb-3">
             <NuxtLink
@@ -43,36 +44,37 @@
           </div>
         </div>
         <div class="flex flex-col my-5 md:my-0 md:justify-self-center">
-          <p class="text-black text-base font-semibold">Quick Link</p>
+          <p class="text-black text-base font-semibold">Links rápidos</p>
           <NuxtLink to="/" class="hover:underline">Home</NuxtLink>
-          <NuxtLink to="/categories" class="hover:underline">Categories</NuxtLink>
-          <NuxtLink to="/blog" class="hover:underline">Archive</NuxtLink>
+          <NuxtLink to="/areas" class="hover:underline">Áreas</NuxtLink>
+          <NuxtLink to="/resources" class="hover:underline">Interesses</NuxtLink>
           <NuxtLink to="https://www.nurriyad.xyz/" target="_blank" class="hover:underline">
-            About Me
+            Sobre mim
           </NuxtLink>
         </div>
         <div>
-          <p class="text-black text-base font-semibold">Connect</p>
-          <p>
-            I have a fair amount of knowledge of Javascript, Typescript, VueJs, and Nuxt. If you
-            have an interesting idea, either open source or paid let's connect.
-          </p>
+          <p class="text-black text-base font-semibold">Contato</p>
 
           <a
-            href="mailto: alasadnurriyad4@gmail.com"
+            href="https://wa.me/5567999767835"
+            class="block text-center w-full bg-green-700 p-2 rounded-lg text-white mt-3 text-sm"
+          >
+            WhatsApp
+          </a>
+          <a
+            href="mailto: yurifbeck@gmail.com"
             class="block text-center w-full bg-sky-700 p-2 rounded-lg text-white mt-3 text-sm"
           >
-            Sent Mail
+            E mail me
           </a>
         </div>
       </div>
 
       <div class="border-t mt-5 text-center p-2">
-        © 2020-2022 No Right is reserved. Who cares 🤷‍♂️? It's
+        2023 - Adaptado do blog
         <a href="https://github.com/nurriyad/blog" target="_blank" rel="nofollow" class="underline"
-          >open source</a
+          >open source do Nurriyad</a
         >
-        anyway.
       </div>
     </div>
   </div>

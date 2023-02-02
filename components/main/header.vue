@@ -10,13 +10,13 @@ let isDark = ref(false)
           <NuxtLink to="/" class="text-2xl text-black font-bold"> Boloko | mind </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/projects"> Projects </NuxtLink>
+          <NuxtLink to="/projects"> Projetos </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/areas"> Areas </NuxtLink>
+          <NuxtLink to="/areas"> Áreas </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/resources"> Resources </NuxtLink>
+          <NuxtLink to="/resources"> Interesses </NuxtLink>
         </li>
       </ul>
       <ul class="flex items-center space-x-3">
@@ -24,8 +24,8 @@ let isDark = ref(false)
           <NuxtLink to="/blog"> Archive </NuxtLink>
         </li> -->
         <li title="About Me">
-          <NuxtLink to="https://www.nurriyad.xyz/" aria-label="About me">
-            <Icon size="1.2em" class="cursor-pointer" name="About" />
+          <NuxtLink to="/about" aria-label="About me">
+            <Icon size="1.2em" class="cursor-pointer" name="Sobre" />
           </NuxtLink>
         </li>
       </ul>

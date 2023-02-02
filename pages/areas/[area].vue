@@ -11,11 +11,7 @@ const area = computed(() => {
   return strName
 })
 
-const { data } = await useAsyncData('home', () =>
-  queryContent('/areas')
-    .where({ tags: { $contains: area.value } })
-    .find()
-)
+const { data } = await useAsyncData('areas', () => queryContent('/areas').find())
 
 const formatedData = computed(() => {
   return data.value?.map((articles) => {
@@ -47,7 +43,7 @@ useHead({
 </script>
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
-    <CategoryTopic />
+    <AreaTopic />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <template v-for="post in formatedData" :key="post.title">
         <BlogCard
