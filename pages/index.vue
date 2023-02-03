@@ -24,11 +24,12 @@ const formatedData = computed(() => {
 
 useHead({
   title: 'Home',
+  script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
+
   meta: [
     {
       name: 'description',
-      content:
-        'Engineering, Web Developmen and never knowing if I should write in english or not',
+      content: 'Engineering, Web Developmen and never knowing if I should write in english or not',
     },
   ],
   titleTemplate: "Boloko's Mind - %s",

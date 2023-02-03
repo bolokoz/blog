@@ -49,7 +49,7 @@ useHead({
     <div class="space-y-5 my-5">
       <template v-for="post in resources" :key="post.title">
         <ArchiveCard
-          :path="post.path"
+          :path="post._path"
           :title="post.title"
           :date="post.date"
           :description="post.description"
