@@ -2,8 +2,10 @@ backend:
   name: git-gateway
   branch: main
 publish_mode: editorial_workflow
-media_folder: assets/img
-public_folder: /img
+site_url: http://bolokoz.netlify.app
+display_url: http://bolokoz.netlify.app
+media_folder: assets/images
+public_folder: /public
 collections:
   - label: 'Site settings'
     name: 'site'
@@ -15,7 +17,12 @@ collections:
         editor:
           preview: false
         fields:
-          - { label: Site Name, name: sitename, widget: string, hint: 'This is used for the site title' }
+          - {
+              label: Site Name,
+              name: sitename,
+              widget: string,
+              hint: 'This is used for the site title',
+            }
           - {
               label: Site Description,
               name: sitedescription,
@@ -26,21 +33,48 @@ collections:
               label: Site Language,
               name: sitelang,
               widget: string,
-              pattern: ['^[a-z]{2}([-])?([A-Za-z]{2})?$', 'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")'],
+              pattern:
+                [
+                  '^[a-z]{2}([-])?([A-Za-z]{2})?$',
+                  'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")',
+                ],
             }
           # - { label: Site Email, name: siteemail, widget: string, required: false }
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
+  - name: 'areas'
+    label: 'Areas'
+    folder: 'content/areas'
     create: true
     format: 'frontmatter'
     slug: '{{fields.createdAt}}-{{slug}}'
-    # editor:
-    #   preview: true
+    editor:
+      preview: true
     fields:
-      - { label: 'Created Date', name: 'createdAt', widget: 'datetime', format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - {
+          label: 'Created Date',
+          name: 'createdAt',
+          widget: 'datetime',
+          format: 'YYYY-MM-DD',
+          date_format: 'YYYY-MM-DD',
+          time_format: false,
+        }
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Description', name: 'description', widget: 'string', required: false }
+      - {
+          label: 'Cover Image',
+          name: 'cover',
+          widget: 'image',
+          required: false,
+          allow_multiple: false,
+        }
+      - {
+          label: 'Gallery',
+          name: 'gallery',
+          widget: 'list',
+          required: false,
+          summary: '{{fields.image}}',
+          field: { label: 'Image', name: 'image', widget: 'image' },
+        }
+      - { label: 'Tags', name: 'tags', widget: 'string', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown', required: false }
   - name: 'projects'
     label: 'Projects'
@@ -60,7 +94,13 @@ collections:
         }
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Description', name: 'description', widget: 'string', required: false }
-      - { label: 'Cover Image', name: 'cover', widget: 'image', required: false, allow_multiple: false }
+      - {
+          label: 'Cover Image',
+          name: 'cover',
+          widget: 'image',
+          required: false,
+          allow_multiple: false,
+        }
       - { label: 'Content', name: 'body', widget: 'markdown', required: false }
       - {
           label: 'Gallery',
