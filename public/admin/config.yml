@@ -1,7 +1,6 @@
 backend:
   name: git-gateway
   branch: main
-publish_mode: editorial_workflow
 site_url: http://bolokoz.netlify.app
 display_url: http://bolokoz.netlify.app
 media_folder: assets/images
@@ -44,6 +43,10 @@ collections:
     label: 'Areas'
     folder: 'content/areas'
     create: true
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    nested:
+      depth: 2 # max depth to show in the collection tree
+      summary: '{{title}}' # optional summary for a t
     format: 'frontmatter'
     slug: '{{fields.createdAt}}-{{slug}}'
     editor:
@@ -76,17 +79,17 @@ collections:
         }
       - { label: 'Tags', name: 'tags', widget: 'string', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown', required: false }
-  - name: 'projects'
-    label: 'Projects'
-    label_singular: 'Project'
-    folder: 'content/projects'
+  - name: 'foodrating'
+    label: 'Food Rating'
+    label_singular: 'FoodRating'
+    folder: 'content/resources/foodrating'
     create: true
     format: 'frontmatter'
     slug: '{{slug}}'
-    preview_path: 'projects/{{slug}}'
+    preview_path: 'resources/foodrating/{{slug}}'
     fields:
       - {
-          label: 'Project Category',
+          label: 'Categoria',
           name: 'category',
           widget: 'select',
           default: 'animals',
@@ -94,6 +97,7 @@ collections:
         }
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Description', name: 'description', widget: 'string', required: false }
+            - { label: 'Data do prato', name: 'date', widget: 'date' }
       - {
           label: 'Cover Image',
           name: 'cover',
@@ -110,3 +114,39 @@ collections:
           summary: '{{fields.image}}',
           field: { label: 'Image', name: 'image', widget: 'image' },
         }
+      - name: 'areas'
+    label: 'Areas'
+    folder: 'content/areas'
+    create: true
+    format: 'frontmatter'
+    slug: '{{fields.createdAt}}-{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - {
+          label: 'Created Date',
+          name: 'createdAt',
+          widget: 'datetime',
+          format: 'YYYY-MM-DD',
+          date_format: 'YYYY-MM-DD',
+          time_format: false,
+        }
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Description', name: 'description', widget: 'string', required: false }
+      - {
+          label: 'Cover Image',
+          name: 'cover',
+          widget: 'image',
+          required: false,
+          allow_multiple: false,
+        }
+      - {
+          label: 'Gallery',
+          name: 'gallery',
+          widget: 'list',
+          required: false,
+          summary: '{{fields.image}}',
+          field: { label: 'Image', name: 'image', widget: 'image' },
+        }
+      - { label: 'Tags', name: 'tags', widget: 'string', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
