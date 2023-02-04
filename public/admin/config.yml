@@ -3,8 +3,14 @@ backend:
   branch: main
 site_url: http://bolokoz.netlify.app
 display_url: http://bolokoz.netlify.app
+local_backend: true
 media_folder: assets/images
 public_folder: assets/images
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: boloko
+    api_key: 546499289928484
 collections:
   - label: 'Site settings'
     name: 'site'
@@ -39,14 +45,47 @@ collections:
                 ],
             }
           # - { label: Site Email, name: siteemail, widget: string, required: false }
-  - name: 'areas'
-    label: 'Areas'
-    folder: 'content/areas'
+  - name: 'areas_dev'
+    label: 'areas/dev'
+    folder: 'content/areas/dev'
+    create: true
+    format: 'frontmatter'
+    slug: '{{fields.createdAt}}-{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - {
+          label: 'Created Date',
+          name: 'createdAt',
+          widget: 'datetime',
+          format: 'YYYY-MM-DD',
+          date_format: 'YYYY-MM-DD',
+          time_format: false,
+        }
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Description', name: 'description', widget: 'string', required: false }
+      - {
+          label: 'Cover Image',
+          name: 'cover',
+          widget: 'image',
+          required: false,
+          allow_multiple: false,
+        }
+      - {
+          label: 'Gallery',
+          name: 'gallery',
+          widget: 'list',
+          required: false,
+          summary: '{{fields.image}}',
+          field: { label: 'Image', name: 'image', widget: 'image' },
+        }
+      - { label: 'Tags', name: 'tags', widget: 'string', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+  - name: 'areas_eng'
+    label: 'areas/eng'
+    folder: 'content/areas/engineering'
     create: true
     meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
-    nested:
-      depth: 2 # max depth to show in the collection tree
-      summary: '{{title}}' # optional summary for a t
     format: 'frontmatter'
     slug: '{{fields.createdAt}}-{{slug}}'
     editor:
@@ -88,19 +127,43 @@ collections:
     slug: '{{slug}}'
     preview_path: 'resources/foodrating/{{slug}}'
     fields:
+      - { label: 'Nome do prato', name: 'title', widget: 'string', required: true }
+      - { label: 'Nome do restaurante', name: 'restaurante', widget: 'string', required: true }
       - {
           label: 'Categoria',
           name: 'category',
           widget: 'select',
-          default: 'animals',
-          options: [{ label: 'Animals', value: 'animals' }, { label: 'Food', value: 'food' }],
+          options:
+            [
+              { label: 'Lanche', value: 'lanche' },
+              { label: 'Doce', value: 'doce' },
+              { label: 'Almoço', value: 'almoço' },
+              { label: 'Janta', value: 'janta' },
+              { label: 'Café', value: 'café' },
+              { label: 'Paçoca', value: 'paçoca' },
+            ],
         }
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Description', name: 'description', widget: 'string', required: false }
-      - { label: 'Data do prato', name: 'date', widget: 'date' }
+      - label: 'Nota Sentimental'
+        name: 'nota_sentimental'
+        widget: 'number'
+        value_type: 'int'
+        max: 3
+        min: 1
+        step: 1
+        default: ['news']
+      - label: 'Nota tecnica'
+        name: 'nota_tecnica'
+        value_type: 'int'
+        step: 1
+        widget: 'number'
+        max: 3
+        min: 1
+        default: ['news']
+      - { label: 'Comentarios', name: 'description', widget: 'string', required: false }
+      - { label: 'Data da refeição', name: 'date', widget: 'date' }
       - {
           label: 'Cover Image',
-          name: 'cover',
+          name: 'image',
           widget: 'image',
           required: false,
           allow_multiple: false,
@@ -114,39 +177,3 @@ collections:
           summary: '{{fields.image}}',
           field: { label: 'Image', name: 'image', widget: 'image' },
         }
-      - name: 'areas'
-    label: 'Areas'
-    folder: 'content/areas'
-    create: true
-    format: 'frontmatter'
-    slug: '{{fields.createdAt}}-{{slug}}'
-    editor:
-      preview: true
-    fields:
-      - {
-          label: 'Created Date',
-          name: 'createdAt',
-          widget: 'datetime',
-          format: 'YYYY-MM-DD',
-          date_format: 'YYYY-MM-DD',
-          time_format: false,
-        }
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Description', name: 'description', widget: 'string', required: false }
-      - {
-          label: 'Cover Image',
-          name: 'cover',
-          widget: 'image',
-          required: false,
-          allow_multiple: false,
-        }
-      - {
-          label: 'Gallery',
-          name: 'gallery',
-          widget: 'list',
-          required: false,
-          summary: '{{fields.image}}',
-          field: { label: 'Image', name: 'image', widget: 'image' },
-        }
-      - { label: 'Tags', name: 'tags', widget: 'string', required: false }
-      - { label: 'Body', name: 'body', widget: 'markdown', required: false }

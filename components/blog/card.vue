@@ -30,7 +30,6 @@ withDefaults(defineProps<Props>(), {
   <article class="group border m-2 overflow-hidden rounded-2xl shadow-lg text-zinc-700">
     <NuxtLink :to="path">
       <NuxtImg
-        :provider="provider"
         class="lg:h-48 md:h-36 w-full object-cover object-center rounded-t-2xl shadow-lg group-hover:scale-[1.05] transition-all duration-500"
         :src="image"
         :alt="alt"

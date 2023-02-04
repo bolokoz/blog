@@ -23,7 +23,7 @@ const formatedData = computed(() => {
       description: articles.description || 'no-descriptoin available',
       image: articles.image || '/nuxt-blog/no-image_cyyits.png',
       alt: articles.alt || 'no alter data available',
-      ogImage: articles.ogImage || '/nuxt-blog/no-image_cyyits.png',
+      ogImage: articles.image || '/nuxt-blog/no-image_cyyits.png',
       provider: articles.provider,
       date: articles.date || 'not-date-available',
       tags: articles.tags || [],
@@ -43,6 +43,7 @@ useHead({
   titleTemplate: "Boloko's resources - %s",
 })
 </script>
+
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <ResourceTopic />

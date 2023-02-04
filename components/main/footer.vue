@@ -65,7 +65,7 @@
             href="mailto: yurifbeck@gmail.com"
             class="block text-center w-full bg-sky-700 p-2 rounded-lg text-white mt-3 text-sm"
           >
-            E mail me
+            Email
           </a>
         </div>
       </div>

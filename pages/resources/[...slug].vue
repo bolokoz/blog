@@ -8,8 +8,8 @@ const data = computed<BlogPost>(() => {
     title: articles.title || 'no-title available',
     description: articles.description || 'no-descriptoin available',
     image: articles.image || '/nuxt-blog/no-image_cyyits.png',
-    alt: articles.alt || 'no alter data available',
-    ogImage: articles.ogImage || '/nuxt-blog/no-image_cyyits.png',
+    alt: articles.title || 'sem foto',
+    ogImage: articles.image || '/nuxt-blog/no-image_cyyits.png',
     provider: articles.provider || 'cloudinary',
     date: articles.date || 'not-date-available',
     tags: articles.tags || [],
@@ -26,11 +26,11 @@ useHead({
       content: data.value.description,
     },
     // Test on: https://developers.facebook.com/tools/debug/ or https://socialsharepreview.com/
-    { property: 'og:site_name', content: `Riyad's Blog` },
+    { property: 'og:site_name', content: `Boloko's Blog` },
     { hid: 'og:type', property: 'og:type', content: 'website' },
     {
       property: 'og:url',
-      content: `https://blog-nurriyad.vercel.app/${path}`,
+      content: `https://bolokoz.netlify.app/${path}`,
     },
     {
       property: 'og:title',
@@ -42,14 +42,14 @@ useHead({
     },
     {
       property: 'og:image',
-      content: data.value.ogImage || data.value.image,
+      content: data.value.image || data.value.image,
     },
     // Test on: https://cards-dev.twitter.com/validator or https://socialsharepreview.com/
-    { name: 'twitter:site', content: '@qdnvubp' },
+    { name: 'twitter:site', content: '@bolokozord' },
     { name: 'twitter:card', content: 'summary_large_image' },
     {
       name: 'twitter:url',
-      content: `https://blog-nurriyad.vercel.app/${path}`,
+      content: `https://boloko.netlify.app/${path}`,
     },
     {
       name: 'twitter:title',
@@ -67,21 +67,19 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: `https://blog-nurriyad.vercel.app/${path}`,
+      href: `https://bolokoz.netlify.app/${path}`,
     },
   ],
 })
-
 </script>
 
 <template>
-  <main class="px-6 container max-w-5xl mx-auto">
+  <main class="px-6 pt-10 container max-w-5xl mx-auto">
     <header>
       <h1 class="text-xl md:text-3xl lg:text-5xl m-7 font-bold text-center">
         {{ data.title || '' }}
       </h1>
       <NuxtImg
-        :provider="data.provider"
         :src="data.image || ''"
         :alt="data.alt || ''"
         class="m-auto rounded-2xl shadow-lg h-52 md:h-96 w-4/5 content-center object-cover"
@@ -114,5 +112,4 @@ useHead({
       </ContentRenderer>
     </div>
   </main>
-
 </template>
