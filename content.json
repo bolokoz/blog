@@ -1,1 +1,11 @@
-{}
+{
+  "custom-list": [
+    {
+      "custom-list-item": "tesa2"
+    }
+  ],
+  "custom-field": "test",
+  "custom-object": {
+    "custom-line": "tes 2"
+  }
+}
