@@ -5,6 +5,7 @@ site_url: http://bolokoz.netlify.app
 display_url: http://bolokoz.netlify.app
 media_folder: assets/images
 public_folder: assets/images
+local_backend: true
 media_library:
   name: cloudinary
   config:
@@ -86,7 +87,7 @@ collections:
     create: true
     meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
     format: 'frontmatter'
-    slug: '{{fields.createdAt}}-{{slug}}'
+    slug: ''
     editor:
       preview: true
     fields:
@@ -123,8 +124,7 @@ collections:
     folder: 'content/resources/foodrating'
     create: true
     format: 'frontmatter'
-    slug: '{{slug}}'
-    preview_path: 'resources/foodrating/{{slug}}'
+    slug: '{{fields.restaurante.name}}-{{fields.prato}}'
     fields:
       - { label: 'Nome do prato', name: 'prato', widget: 'string', required: true }
       - label: 'Restaurante'
@@ -184,7 +184,7 @@ collections:
         }
       - { label: 'Data da refeição', name: 'date', widget: 'date' }
       - { label: 'Image', name: 'image', widget: 'image', required: false, allow_multiple: false }
-      - { label: 'Delivery', name: 'delivery', widget: 'boolean' }
+      - { label: 'Delivery', name: 'delivery', widget: 'boolean', default: 'false' }
       - {
           label: 'Periodo',
           name: 'periodo',
