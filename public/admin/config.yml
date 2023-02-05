@@ -3,7 +3,6 @@ backend:
   branch: main
 site_url: http://bolokoz.netlify.app
 display_url: http://bolokoz.netlify.app
-local_backend: true
 media_folder: assets/images
 public_folder: assets/images
 media_library:
@@ -127,8 +126,16 @@ collections:
     slug: '{{slug}}'
     preview_path: 'resources/foodrating/{{slug}}'
     fields:
-      - { label: 'Nome do prato', name: 'title', widget: 'string', required: true }
-      - { label: 'Nome do restaurante', name: 'restaurante', widget: 'string', required: true }
+      - { label: 'Nome do prato', name: 'prato', widget: 'string', required: true }
+      - label: 'Restaurante'
+        name: 'restaurante'
+        widget: 'object'
+        required: true
+        fields:
+          - label: 'Nome do restaurante'
+            name: 'name'
+            widget: 'string'
+          - { label: 'Location', name: 'location', widget: 'map' }
       - {
           label: 'Categoria',
           name: 'category',
@@ -137,12 +144,24 @@ collections:
             [
               { label: 'Lanche', value: 'lanche' },
               { label: 'Doce', value: 'doce' },
-              { label: 'Almoço', value: 'almoço' },
-              { label: 'Janta', value: 'janta' },
+              { label: 'marmita', value: 'marmita' },
+              { label: 'carnes', value: 'carnes' },
+              { label: 'pizza', value: 'pizza' },
+              { label: 'peixes', value: 'peixes' },
+              { label: 'parmegiana', value: 'parmegiana' },
+              { label: 'sushi', value: 'sushi' },
+              { label: 'self-service', value: 'self-service' },
               { label: 'Café', value: 'café' },
               { label: 'Paçoca', value: 'paçoca' },
             ],
         }
+      - label: 'Valor'
+        name: 'valor'
+        widget: 'number'
+        value_type: 'int'
+        max: 3000
+        min: 1
+        step: 1
       - label: 'Nota Sentimental'
         name: 'nota_sentimental'
         widget: 'number'
@@ -150,7 +169,6 @@ collections:
         max: 3
         min: 1
         step: 1
-        default: ['news']
       - label: 'Nota tecnica'
         name: 'nota_tecnica'
         value_type: 'int'
@@ -158,15 +176,25 @@ collections:
         widget: 'number'
         max: 3
         min: 1
-        default: ['news']
-      - { label: 'Comentarios', name: 'description', widget: 'string', required: false }
-      - { label: 'Data da refeição', name: 'date', widget: 'date' }
       - {
-          label: 'Cover Image',
-          name: 'image',
-          widget: 'image',
+          label: 'Observação sentimental',
+          name: 'obs_sentimental',
+          widget: 'string',
           required: false,
-          allow_multiple: false,
+        }
+      - { label: 'Data da refeição', name: 'date', widget: 'date' }
+      - { label: 'Image', name: 'image', widget: 'image', required: false, allow_multiple: false }
+      - { label: 'Delivery', name: 'delivery', widget: 'boolean' }
+      - {
+          label: 'Periodo',
+          name: 'periodo',
+          widget: 'select',
+          options:
+            [
+              { label: 'café', value: 'café' },
+              { label: 'almoço', value: 'almoço' },
+              { label: 'janta', value: 'janta' },
+            ],
         }
       - { label: 'Content', name: 'body', widget: 'markdown', required: false }
       - {

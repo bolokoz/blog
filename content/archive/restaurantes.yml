@@ -1,0 +1,5 @@
+restaurantes:
+  - name: Maracutaia
+    location: '{"type":"Point","coordinates":[-54.6019583,-20.4639224]}'
+  - name: Cantina romana
+    location: '{"type":"Point","coordinates":[-54.6025535,-20.4591477]}'

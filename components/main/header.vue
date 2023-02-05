@@ -10,7 +10,7 @@ let isDark = ref(false)
           <NuxtLink to="/" class="text-2xl text-black font-bold"> Boloko | mind </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/projects"> Projetos </NuxtLink>
+          <NuxtLink to="/projects"> Portfolio </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/areas"> Áreas </NuxtLink>
