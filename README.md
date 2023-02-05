@@ -33,9 +33,9 @@ Hacker News clone built with [Nuxt3](https://nuxt.com), [Nuxt-Content2](https://
 
 ## Demo
 
-https://blog.nurriyad.xyz
+https://bolokoz.netlify.xyz
 
-> Hosted on [Vercel](https://vercel.com/): `npm run build`
+> Hosted on [netlify](https://netlify.com/): `npm run build`
 
 ## Build Setup
 
