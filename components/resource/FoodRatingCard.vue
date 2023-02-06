@@ -7,7 +7,6 @@ interface Props {
   image: string
   alt: string
   ogImage: string
-  provider: string
   tags: Array<string>
   published: boolean
 }
@@ -20,7 +19,6 @@ withDefaults(defineProps<Props>(), {
   image: '',
   alt: 'no-alt',
   ogImage: '/nuxt-blog/no-image_cyyits.png',
-  provider: 'cloudinary',
   tags: () => [],
   published: false,
 })

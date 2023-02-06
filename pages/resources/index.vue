@@ -2,23 +2,8 @@
 import { makeFirstCharUpper } from '@/utils/helper'
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
-const topics = [
-  'javascript',
-  'typescript',
-  'git',
-  'docker',
-  'kubernetes',
-  'vue',
-  'nuxt',
-  'pinia',
-  'vuex',
-  'firebase',
-  'supabse',
-  'cypress',
-]
-
-const { data: resources } = await useAsyncData('equal', () => {
-  return queryContent('/resources').find()
+const { data: foodrating } = await useAsyncData('foodrating', () => {
+  return queryContent('resources', 'foodrating').sort({ date: 1 }).find()
 })
 
 // const directories = computed(() => {
@@ -41,25 +26,14 @@ useHead({
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <MainHero title="Resources" subtitle="resources de interesse geral" />
     <div class="flex flex-wrap px-6 mt-12 gap-3">
-      <template v-for="topic in [...new Set(resources?.map((d) => d._dir))]" :key="topic">
+      <template v-for="topic in [...new Set(foodrating?.map((d) => d._dir))]" :key="topic">
         <ResourceHero :title="makeFirstCharUpper(topic)" />
       </template>
     </div>
 
     <div class="space-y-5 my-5">
-      <template v-for="post in resources" :key="post.title">
-        <ResourceCard
-          :path="post._path"
-          :title="post.title"
-          :date="post.date"
-          :description="post.description"
-          :image="post.image"
-          :alt="post.alt"
-          :ogImage="post.image"
-          :provider="post.provider"
-          :tags="post.tags"
-          :published="post.published"
-        />
+      <template v-for="post in foodrating" :key="post.title">
+        <ResourceFoodRatingCard v-bind="post" />
       </template>
     </div>
   </main>
