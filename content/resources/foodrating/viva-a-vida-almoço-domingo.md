@@ -1,8 +1,7 @@
 ---
-prato: Almoço Domingo
-restaurante:
-  name: Viva a Vida
-  location: '{"type":"Point","coordinates":[-54.6096953,-20.4664967]}'
+title: Almoço Domingo
+restaurante: Viva a Vida
+location: '{"type":"Point","coordinates":[-54.6096953,-20.4664967]}'
 category: self-service
 valor: 55
 nota_sentimental: 1

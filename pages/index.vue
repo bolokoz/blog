@@ -40,19 +40,7 @@ useHead({
     <MainHero title="Ultimas atualizações" subtitle="Todos os assuntos" />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <template v-for="post in formatedData" :key="post.title">
-        <MainCard
-          :path="post.path"
-          :dir="post.dir"
-          :title="post.title"
-          :date="post.date"
-          :description="post.description"
-          :image="post.image"
-          :alt="post.alt"
-          :ogImage="post.ogImage"
-          :provider="post.provider"
-          :tags="post.tags"
-          :published="post.published"
-        />
+        <MainCard v-bind="post" />
       </template>
       <template v-if="data?.length === 0">
         <BlogEmpty />

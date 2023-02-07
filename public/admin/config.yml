@@ -124,18 +124,13 @@ collections:
     folder: 'content/resources/foodrating'
     create: true
     format: 'frontmatter'
-    slug: '{{fields.restaurante.name}}-{{fields.prato}}'
+    slug: '{{fields.title}}-{{fields.restaurante.name}}'
     fields:
-      - { label: 'Nome do prato', name: 'prato', widget: 'string', required: true }
-      - label: 'Restaurante'
+      - { label: 'Nome do prato', name: 'title', widget: 'string', required: true }
+      - label: 'Nome do restaurante'
         name: 'restaurante'
-        widget: 'object'
-        required: true
-        fields:
-          - label: 'Nome do restaurante'
-            name: 'name'
-            widget: 'string'
-          - { label: 'Location', name: 'location', widget: 'map' }
+        widget: 'string'
+      - { label: 'Location', name: 'location', widget: 'map' }
       - {
           label: 'Categoria',
           name: 'category',
