@@ -177,7 +177,7 @@ collections:
           widget: 'string',
           required: false,
         }
-      - { label: 'Data da refeição', name: 'date', widget: 'date' }
+      - { label: 'Data da refeição', name: 'date', widget: 'date', format: 'YYYY-MM-DD' }
       - { label: 'Image', name: 'image', widget: 'image', required: false, allow_multiple: false }
       - { label: 'Delivery', name: 'delivery', widget: 'boolean', default: 'false' }
       - {

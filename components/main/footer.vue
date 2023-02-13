@@ -3,11 +3,15 @@
     <div class="px-6 container max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3">
         <div>
-          <p class="text-black text-2xl py-1 font-semibold">Hello from Boloko</p>
+          <!-- <p class="text-black text-2xl py-1 font-semibold">Hello from Boloko</p>
+
           <p class="py-2">
             Bem vindo. Site em constante arrumamento. Nunca sei quando escrever as paradinha em
             ingles ou portugues. Antes feito que perfeito.
-          </p>
+          </p> -->
+
+          <!-- <p class="text-black text-base font-semibold">Contato</p> -->
+
           <div class="my-3 space-x-3 pb-3">
             <NuxtLink
               to="https://github.com/bolokoz"
@@ -17,6 +21,7 @@
             >
               <Icon name="fa:github" size="1em" />
             </NuxtLink>
+
             <!-- <NuxtLink
               to="https://www.linkedin.com/in/nur-riyad/"
               target="_blank"
@@ -34,16 +39,32 @@
               <Icon name="fa:twitter-square" size="1em" />
             </NuxtLink> -->
             <NuxtLink
-              to="https://stackoverflow.com/users/16781395/nur-riyad"
+              href="mailto: yurifbeck@gmail.com"
+              target="_blank"
+              class="p-2 bg-gray-300 rounded-md"
+              aria-label="StackOverflow"
+            >
+              <Icon name="fa:envelope" size="1em" />
+            </NuxtLink>
+            <!-- <NuxtLink
+              href="mailto: yurifbeck@gmail.com"
               target="_blank"
               class="p-2 bg-gray-300 rounded-md"
               aria-label="StackOverflow"
             >
               <Icon name="fa:stack-overflow" size="1em" />
+            </NuxtLink> -->
+            <NuxtLink
+              href="https://wa.me/5567999767835"
+              target="_blank"
+              class="p-2 bg-gray-300 rounded-md"
+              aria-label="StackOverflow"
+            >
+              <Icon name="fa:whatsapp" size="1em" />
             </NuxtLink>
           </div>
         </div>
-        <div class="flex flex-col my-5 md:my-0 md:justify-self-center">
+        <!-- <div class="flex flex-col my-5 md:my-0 md:justify-self-center">
           <p class="text-black text-base font-semibold">Links rápidos</p>
           <NuxtLink to="/" class="hover:underline">Home</NuxtLink>
           <NuxtLink to="/areas" class="hover:underline">Áreas</NuxtLink>
@@ -51,8 +72,8 @@
           <NuxtLink to="https://www.nurriyad.xyz/" target="_blank" class="hover:underline">
             Sobre mim
           </NuxtLink>
-        </div>
-        <div>
+        </div> -->
+        <!-- <div>
           <p class="text-black text-base font-semibold">Contato</p>
 
           <a
@@ -67,7 +88,7 @@
           >
             Email
           </a>
-        </div>
+        </div> -->
       </div>
 
       <div class="border-t mt-5 text-center p-2">

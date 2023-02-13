@@ -15,22 +15,22 @@ const { data } = await useAsyncData('resources', () => queryContent(route.path).
 
 const articles = await queryContent(route.path).find()
 
-const formatedData = computed(() => {
-  return data.value?.map((articles) => {
-    return {
-      path: articles._path,
-      title: articles.title || 'no-title available',
-      description: articles.description || 'no-descriptoin available',
-      image: articles.image || '/nuxt-blog/no-image_cyyits.png',
-      alt: articles.alt || 'no alter data available',
-      ogImage: articles.image || '/nuxt-blog/no-image_cyyits.png',
-      provider: articles.provider,
-      date: articles.date || 'not-date-available',
-      tags: articles.tags || [],
-      published: articles.published || false,
-    }
-  })
-})
+// const formatedData = computed(() => {
+//   return data.value?.map((articles) => {
+//     return {
+//       path: articles._path,
+//       title: articles.title || 'no-title available',
+//       description: articles.description || 'no-descriptoin available',
+//       image: articles.image || '/nuxt-blog/no-image_cyyits.png',
+//       alt: articles.alt || 'no alter data available',
+//       ogImage: articles.image || '/nuxt-blog/no-image_cyyits.png',
+//       provider: articles.provider,
+//       date: articles.date || 'not-date-available',
+//       tags: articles.tags || [],
+//       published: articles.published || false,
+//     }
+//   })
+// })
 
 useHead({
   title: resource.value,
@@ -48,8 +48,8 @@ useHead({
   <main class="container max-w-5xl mx-auto text-zinc-600">
     <ResourceTopic />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <template v-for="post in formatedData" :key="post.title">
-        <BlogCard v-bind="post" />
+      <template v-for="post in data" :key="post.title">
+        <MainMulticard v-bind="post" />
       </template>
       <template v-if="data?.length === 0">
         <BlogEmpty />

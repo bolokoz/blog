@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { makeFirstCharUpper } from '@/utils/helper'
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+import FoodRatingCard from '~~/components/resource/FoodRatingCard.vue'
 
 const { data: resources } = await useAsyncData('resources', () => {
-  return queryContent('resources').sort({ date: 1 }).find()
+  return queryContent('resources', 'foodrating').sort({ date: 1 }).find()
 })
 
 // const directories = computed(() => {
@@ -24,17 +25,17 @@ useHead({
 </script>
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
-    <MainHero title="Interesses" subtitle="interesse geral" />
+    <MainHero title="Avaliação de comidas" subtitle="Não tenho nenhuma qualificação" />
     <div class="flex flex-wrap px-6 mt-12 gap-3">
-      <template v-for="topic in [...new Set(resources?.map((d) => d._dir))]" :key="topic">
+      <template v-for="topic in [...new Set(resources?.map((d) => d.category))]" :key="topic">
         <ResourceHero :title="makeFirstCharUpper(topic)" />
       </template>
     </div>
 
-    <!-- <div class="space-y-5 my-5">
+    <div class="space-y-5 my-5">
       <template v-for="post in resources" :key="post.title">
-        <BlogCard v-bind="post" />
+        <FoodRatingCard v-bind="post" />
       </template>
-    </div> -->
+    </div>
   </main>
 </template>

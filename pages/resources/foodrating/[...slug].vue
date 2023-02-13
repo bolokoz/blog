@@ -3,10 +3,33 @@ import type { BlogPost } from '@/types/blog'
 const { path } = useRoute()
 const articles = await queryContent(path).findOne()
 
-const data = computed<BlogPost>(() => {
+interface Review {
+  path: string
+  title: string
+  date: string
+  description: string
+  image: string
+  alt: string
+  ogImage: string
+  tags: Array<string>
+  published: boolean
+  restaurante: string
+  prato: string
+  nota_sentimental: number
+  type: string
+  coordenadas: string
+  category: string
+  valor: number
+  nota_tecnica: number
+  delivery: boolean
+  periodo: string
+  _path: string
+}
+
+const data = computed(() => {
   return {
     title: articles.prato || 'no-title available',
-    description: articles.restaurante.name || 'no-descriptoin available',
+    description: articles.restaurante || 'not available',
     image: articles.image || '/nuxt-blog/no-image_cyyits.png',
     alt: articles.title || 'sem foto',
     ogImage: articles.image || '/nuxt-blog/no-image_cyyits.png',
@@ -14,6 +37,16 @@ const data = computed<BlogPost>(() => {
     date: articles.date || 'not-date-available',
     tags: articles.tags || [],
     published: articles.published || false,
+    restaurante: articles.restaurante || 'sem-nome',
+    prato: articles.prato || 'sem-nome-prato',
+    coordenadas: articles.coordenadas || 'sem-coordenada',
+    category: articles.category || '',
+    valor: articles.valor || 1,
+    nota_sentimental: articles.nota_sentimental || 1,
+    nota_tecnica: articles.nota_tecnica || 2,
+    delivery: articles.delivery || false,
+    periodo: articles.periodo || 'almoço',
+    _path: articles.path || '/',
   }
 })
 
@@ -34,11 +67,11 @@ useHead({
     },
     {
       property: 'og:title',
-      content: data.value.title,
+      content: data.value.prato,
     },
     {
       property: 'og:description',
-      content: data.value.description,
+      content: data.value.restaurante,
     },
     {
       property: 'og:image',
@@ -53,11 +86,11 @@ useHead({
     },
     {
       name: 'twitter:title',
-      content: data.value.title,
+      content: data.value.prato,
     },
     {
       name: 'twitter:description',
-      content: data.value.description,
+      content: data.value.restaurante,
     },
     {
       name: 'twitter:image',
@@ -76,9 +109,12 @@ useHead({
 <template>
   <main class="px-6 pt-10 container max-w-5xl mx-auto">
     <header>
-      <h1 class="text-xl md:text-3xl lg:text-5xl m-7 font-bold text-center">
-        {{ data.title || '' }} - restaurante {{ data.description }}
+      <h1 class="text-3xl md:text-3xl lg:text-5xl m-7 font-bold text-center">
+        {{ data.prato || 'prato' }}
       </h1>
+      <h2 class="text-xl md:text-2xl lg:text-3xl m-7 font-thin text-center">
+        Restaurante: {{ data.restaurante }}
+      </h2>
       <NuxtImg
         :src="data.image || ''"
         :alt="data.alt || ''"
@@ -91,13 +127,27 @@ useHead({
         <div class="md:flex text-black content-center gap-8 text-xs sm:text-sm">
           <div class="flex items-center font-semibold">
             <LogoDate />
-            <p>{{ new Date(data.date).toLocaleDateString('pt-BR') || '' }}</p>
+            <span class="bg-gray-200 rounded-md px-2 py-1 font-semibold">{{
+              new Date(data.date).toLocaleDateString('pt-BR') || ''
+            }}</span>
           </div>
           <div class="flex items-center gap-2 flex-wrap my-5">
             <LogoTag />
-            <template v-for="tag in data.tags">
-              <span class="bg-gray-200 rounded-md px-2 py-1 font-semibold">{{ tag }}</span>
-            </template>
+            <span class="bg-gray-200 rounded-md px-2 py-1 font-semibold">{{ data.category }}</span>
+          </div>
+          <div class="flex items-center gap-2 flex-wrap my-5">
+            <Icon name="fa:star" size="1.5em" class="text-yellow" />
+            <span class="bg-gray-200 rounded-md px-2 py-1 font-semibold"
+              >{{ data.nota_sentimental }} / 3</span
+            >
+          </div>
+          <div class="flex items-center gap-2 flex-wrap my-5">
+            <Icon name="fa:dollar" size="1.5em" />
+            <span class="bg-gray-200 rounded-md px-2 py-1 font-semibold">R$ {{ data.valor }}</span>
+          </div>
+          <div class="flex items-center gap-2 flex-wrap my-5">
+            <Icon name="ic:outline-access-time" size="1.5em" />
+            <span class="bg-gray-200 rounded-md px-2 py-1 font-semibold"> {{ data.periodo }}</span>
           </div>
         </div>
       </div>
