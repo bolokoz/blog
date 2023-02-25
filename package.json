@@ -15,7 +15,8 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "nuxt": "^3.1.1",
-    "nuxt-icon": "^0.2.10"
+    "nuxt-icon": "^0.2.10",
+    "vue3-notion": "^0.1.40"
   },
   "dependencies": {
     "daisyui": "^2.49.0"

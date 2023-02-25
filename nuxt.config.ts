@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
     '@nuxt/image-edge',
+    ['vue3-notion/nuxt', { css: true }],
     // '@nuxtjs/robots',
     // '@nuxtjs/fontaine',
   ],
