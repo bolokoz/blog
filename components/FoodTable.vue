@@ -35,27 +35,27 @@ const props = defineProps(['items'])
             scope="row"
             class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
           >
-            <!-- <img class="w-10 h-10 rounded-full" :src="item?.fotos[0]?.url" alt="Jese image" /> -->
+            <img class="w-12 h-12 rounded-full" :src="item?.imagens[0]?.url" alt="Jese image" />
             <div class="pl-3">
-              <div class="text-base font-semibold">{{ item.Prato }}</div>
-              <div class="font-normal text-gray-500  sm:hidden">{{ item.Restaurante }}</div>
+              <div class="text-base font-semibold">{{ item.prato }}</div>
+              <div class="font-normal text-gray-500  sm:hidden">{{ item.restaurante }}</div>
             </div>
           </th>
-          <td class="px-6 py-4 invisible sm:visible">{{ item.Restaurante }}</td>
-          <td class="px-6 py-4">{{ item.Sabor }}</td>
+          <td class="px-6 py-4 invisible sm:visible">{{ item.restaurante }}</td>
+          <td class="px-6 py-4">{{ item.sabor }}</td>
           <td class="px-6 py-4">
             <div class="flex items-center">
               <!-- <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div> -->
-              R$ {{ item.Preco }}
+              R$ {{ item.preco }}
             </div>
           </td>
           <td class="px-6 py-4">
-            <td>{{ item.Dia }}</td>
-            <NuxtLink
-              :to="`/notion/${item.id}`"
+            <td>{{ item.dia }}</td>
+            <!-- <NuxtLink
+              :to="`/resources/foodrating/${item.id}`"
               class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
               >Mais</NuxtLink
-            >
+            > -->
           </td>
         </tr>
       </tbody>

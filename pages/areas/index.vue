@@ -2,20 +2,13 @@
 import { makeFirstCharUpper } from '@/utils/helper'
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
-const topics = [
-  'javascript',
-  'typescript',
-  'git',
-  'docker',
-  'kubernetes',
-  'vue',
-  'nuxt',
-  'pinia',
-  'vuex',
-  'firebase',
-  'supabse',
-  'cypress',
-]
+const { $notion } = useNuxtApp()
+// const { data } = await useAsyncData('notion', () =>
+//   $notion.getPageBlocks('c7ca4eca35ee4f8ebe2665a7be719c36')
+// )
+const { data } = await useAsyncData('notion2', () =>
+  $notion.getPageTable('c7ca4eca35ee4f8ebe2665a7be719c36')
+)
 
 const { data: areas } = await useAsyncData('equal', () => {
   return queryContent('/areas').find()
@@ -39,7 +32,7 @@ useHead({
 </script>
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
-    <MainHero title="Areas" subtitle="Areas de interesse geral" />
+    <MainHero title="Áreas de interesse" subtitle="Assuntos que estou sempre me atualizando" />
     <div class="flex flex-wrap px-6 mt-12 gap-3">
       <template v-for="topic in areas?.map((d) => d._dir)" :key="topic">
         <AreaCard :title="makeFirstCharUpper(topic)" />
@@ -47,7 +40,7 @@ useHead({
     </div>
 
     <div class="space-y-5 my-5">
-      <template v-for="post in areas" :key="post.title">
+      <!-- <template v-for="post in areas" :key="post.title">
         <ArchiveCard
           :path="post._path"
           :title="post.title"
@@ -60,7 +53,8 @@ useHead({
           :tags="post.tags"
           :published="post.published"
         />
-      </template>
+      </template> -->
+      <FoodTable :items="data"></FoodTable>
     </div>
   </main>
 </template>

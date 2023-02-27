@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-const { data } = await useAsyncData('home', () => queryContent('/projects').sort({ _id: -1 }).find())
+const { data } = await useAsyncData('home', () =>
+  queryContent('/projects').sort({ _id: -1 }).find()
+)
 
 const formatedData = computed(() => {
   return data.value?.map((articles) => {
@@ -31,7 +33,7 @@ useHead({
 </script>
 <template>
   <main class="container max-w-5xl mx-auto text-zinc-600">
-    <ProjectHero title="asdas" />
+    <ProjectHero title="Projetos e portfolio" />
     <div class="space-y-5 my-5">
       <template v-for="post in formatedData" :key="post.title">
         <ArchiveCard
